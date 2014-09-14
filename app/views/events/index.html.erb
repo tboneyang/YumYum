@@ -1,0 +1,9 @@
+<div id="staticcenter">
+<% @events.each do |event| %>
+	<div id="block">
+		<%= event.title %>
+		<%= event.text %>
+	</div>
+<%end%>
+	<%= link_to 'Add Event', new_event_path %>
+</div>
