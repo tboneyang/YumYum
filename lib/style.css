@@ -1,0 +1,33 @@
+h1 {
+  font-family : 'Nunito', sans-serif;
+  font-size : 50px;
+  text-shadow : 4px 4px 4px #aaa;
+  color : white;
+  -webkit-text-stroke-width : 1px;
+  -webkit-text-stroke-color : black;
+  /*background-color : red;*/
+  text-align : center;
+  margin-left : auto;
+  margin-right : auto;
+  width : 25%;
+}
+
+body {
+  background-image : url("background.jpg");
+  background-size : cover;
+}
+
+div {
+  background-color : white;
+  margin-left : auto;
+  margin-right : auto;
+  width : 50%;
+  height: 50%;
+  border : 1px solid;
+  border-radius : 25px;
+  box-shadow : 10px 10px 5px #888888;
+}
+
+.hover {
+  opacity : .7;
+}
