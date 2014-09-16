@@ -1,0 +1,45 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#missionstatement{
+	margin-top:15%;
+	text-align:center;
+	font-size:30px;
+	font-style:italic;
+}
+
+#about{
+	margin-top:15%;
+	font-size:25px;
+}
+
+#acknowledgements{
+	text-align:center;
+	text-decoration:underline;
+}
+
+#explorebutton{
+	margin-top:10%;
+	margin-left:100px;
+	margin-right:100px;
+	text-align:center;
+	font-size:25px;
+	font-weight:bold;
+	border:1px solid black;
+	padding:20px;
+	background:#f31;
+}
+
+#explorebutton a{
+	text-decoration:none;
+	color:white;
+}
+
+#emptyspace{
+	height:40px;
+}
+
+.centermap{
+text-align:center;
+}
