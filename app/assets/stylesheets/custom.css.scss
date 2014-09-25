@@ -51,6 +51,15 @@ h2 {
   color: $grayLight;
 }
 
+h3 {
+  font-size: 1em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: normal;
+  color: black;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -98,4 +107,13 @@ footer{
       margin-left: 10px;
     }
   }
+}
+
+/* About page */
+.tom {
+  text-align: left;
+}
+
+.arya {
+  text-align: right;
 }
