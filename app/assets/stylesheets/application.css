@@ -47,7 +47,7 @@ body {
 
 #logo{
 	color:#f31;
-	padding-top, padding-left, padding-right:40px;
+        padding: 40px 40px 0px 40px; 
 	font-size: 70px;
 	width:300px;
 	margin-left: auto;
