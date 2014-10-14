@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= foodpost.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(foodpost.created_at) %> ago.
+  </span>
+  <% if current_user?(foodpost.user) %>
+    <%= link_to "delete", foodpost, method: :delete,
+                                    data: { confirm: "You sure?" },
+                                    title: foodpost.content %>
+  <% end %>
+</li>
