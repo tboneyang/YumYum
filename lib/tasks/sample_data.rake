@@ -19,7 +19,10 @@ namespace :db do
     users = User.all.limit(6)
     50.times do
       content = Faker::Lorem.sentence(5)
-      users.each { |user| user.foodposts.create!(content: content) }
+      users.each { |user| user.foodposts.create!(content: content,
+                                                 start_time: Time.now,
+                                                 end_time: Time.now + (60*60),
+                                                 location: "Rickets 201")}
     end
   end
 end

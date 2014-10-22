@@ -1,17 +1,19 @@
 <% if signed_in? %>
   <div class="row">
-    <aside class="span4">
+    <!--<aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
       <section>
         <%= render 'shared/foodpost_form' %>
       </section>
-    </aside>
-    <div class="span8">
-      <h3>Foodpost Feed</h3>
+    </aside>-->
+    <div class="feed">
+      <%= image_tag("pizza.png", :class => "pizza") %>
       <%= render 'shared/feed' %>
     </div>
+  <span id="map-canvas" style="height: 500px; width: 500px;"></span>
+  <span id="main-map" style="height: 1px;"></span>
   </div>
 <% else %>
   <div class="center hero-unit">
