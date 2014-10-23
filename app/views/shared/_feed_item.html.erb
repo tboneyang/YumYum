@@ -1,7 +1,7 @@
 <li id="<%= feed_item.id %>">
+  <span class="date"><%= feed_item.date.strftime("%a %m/%e") %>
+  @
   <span class="time"><%= feed_item.start_time.localtime.strftime("%H:%M") %></span>
-  -
-  <span class="time"><%= feed_item.end_time.localtime.strftime("%H:%M") %></span>
   <span class="location"><%= feed_item.location %></span>
   <span class="content"><%= feed_item.content %></span>
   <span class="timestamp">

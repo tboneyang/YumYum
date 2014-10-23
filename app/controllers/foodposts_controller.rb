@@ -22,7 +22,8 @@ class FoodpostsController < ApplicationController
 
   private
     def foodpost_params
-      params.require(:foodpost).permit(:content)
+      params.require(:foodpost).permit(:content, :date, :location,
+                                       :start_time)
     end
 
     def correct_user

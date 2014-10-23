@@ -13,5 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $(".datepicker").datepicker({
+    format: "yyyy-mm-dd"
+  });
+  $("#pizza").click(function(e) {
+    $("#new-post").slideDown('slow');
+
+    e.preventDefault();
+  });
+});
+

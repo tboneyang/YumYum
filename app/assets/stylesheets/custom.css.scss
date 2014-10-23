@@ -4,6 +4,7 @@ $navbarBackgroundHighlight: #B21522;
 $navbarLinkColor: #fff;
 $navbarLinkColorHover: #eaeaea;
 $navbarLinkColorActive: #eaeaea;
+$btnPrimaryBackground: #B21522;
 
 @import url("//fonts.googleapis.com/css?family=Roboto:300,400,500");
 @import "bootstrap";
@@ -46,6 +47,10 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.hero-unit {
+  background-color: white;
 }
 
 /* typography */
@@ -234,19 +239,20 @@ input {
 
 /* Feed */
 
-.pizza {
+#pizza {
   height: 100px;
   width: 100px;
   margin-left: 40%;
+  &:hover{
+    transform: scale(1.5);
+  }
 }
 
-.row {
-  margin-left: -70px;
 
-  .feed {
-    float: left;
-    width: 50%;
-  }
+.feed {
+  margin-left: -70px;
+  float: left;
+  width: 50%;
 }
 
 /* foodposts */
@@ -270,6 +276,21 @@ input {
 .timestamp {
   color: $grayLight;
 }
+
+#new-post{
+  display:none;
+  input, select{
+    width: 25%;
+  }
+  .datepicker{
+    margin-left: 36px;
+  }
+  .location{
+    width: 85%;
+    padding-bottom: 5px;
+  }
+}
+
 .gravatar {
   float: left;
   margin-right: 10px;

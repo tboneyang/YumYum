@@ -9,7 +9,8 @@
       </section>
     </aside>-->
     <div class="feed">
-      <%= image_tag("pizza.png", :class => "pizza") %>
+      <%= image_tag("pizza.png", :id => "pizza") %>
+      <%= render 'shared/foodpost_form' %>
       <%= render 'shared/feed' %>
     </div>
   <span id="map-canvas" style="height: 500px; width: 500px;"></span>
@@ -18,10 +19,6 @@
 <% else %>
   <div class="center hero-unit">
     <h1>Welcome to YumYum!</h1>
-
-    <h2>
-      Free food because why not
-    </h2>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
   </div>
