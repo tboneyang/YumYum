@@ -1,13 +1,5 @@
 <% if signed_in? %>
   <div class="row">
-    <!--<aside class="span4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-        <%= render 'shared/foodpost_form' %>
-      </section>
-    </aside>-->
     <div class="feed">
       <%= image_tag("pizza.png", :id => "pizza") %>
       <%= render 'shared/foodpost_form' %>

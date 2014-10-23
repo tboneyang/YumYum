@@ -1,4 +1,8 @@
 <li>
+  <span class="date"><%= foodpost.date.strftime("%a %m/%e") %>
+  @
+  <span class="time"><%= foodpost.start_time.localtime.strftime("%l:%M %p") %></span>
+  <span class="location"><%= foodpost.location %></span>
   <span class="content"><%= foodpost.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(foodpost.created_at) %> ago.
