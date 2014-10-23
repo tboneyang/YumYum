@@ -2,6 +2,7 @@ class FoodpostsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
 
   def index
+    @foodposts = Foodpost.paginate(page: params[:page])
   end
 
   def create
