@@ -1,12 +1,15 @@
 <div class="row">
-  <div class= "feed">
+  <div class= "span6">
     <%= image_tag("pizza.png", :id => "pizza-no-hover") %>
     <ol class="foodposts">
       <%= render @foodposts %>
     </ol>
     <%= will_paginate %>
   </div>
-  <span id="map-canvas" style="height: 500px; width: 500px;"></span>
-  <span id="main-map" style="height: 1px;"></span>
+  <div class="span6">
+    <span id="map-canvas" style="height: 500px; width: 500px;"></span>
+    <span id="main-map" style="height: 1px;"></span>
+  </div>
 </div>
+
 

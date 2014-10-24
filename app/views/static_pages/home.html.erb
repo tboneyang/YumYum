@@ -1,12 +1,14 @@
 <% if signed_in? %>
   <div class="row">
-    <div class="feed">
+    <div class="span6">
       <%= image_tag("pizza.png", :id => "pizza") %>
       <%= render 'shared/foodpost_form' %>
       <%= render 'shared/feed' %>
     </div>
-  <span id="map-canvas" style="height: 500px; width: 500px;"></span>
-  <span id="main-map" style="height: 1px;"></span>
+    <div class="span6">
+      <span id="map-canvas" style="height: 500px; width: 500px;"></span>
+      <span id="main-map" style="height: 1px;"></span>
+    </div>
   </div>
 <% else %>
   <div class="center hero-unit">

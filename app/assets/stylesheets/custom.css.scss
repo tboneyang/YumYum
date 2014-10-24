@@ -276,12 +276,6 @@ input {
   margin-left: 40%;
 }
 
-.feed {
-  margin-left: -70px;
-  float: left;
-  width: 50%;
-}
-
 /* foodposts */
 
 .foodposts {
@@ -317,7 +311,7 @@ input {
     width: 25%;
   }
   .datepicker{
-    margin-left: 36px;
+    margin-left: 28px;
   }
   .location{
     width: 85%;
@@ -349,5 +343,4 @@ aside {
 #map-canvas {
   position: fixed !important;
   margin-top: 50px;
-  margin-left: 130px;
 }
