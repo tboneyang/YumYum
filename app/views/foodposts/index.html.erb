@@ -1,8 +1,10 @@
 <div class="row">
   <div class= "span6">
-    <%= image_tag("pizza.png", :id => "pizza") %>
     <% if signed_in? %>
+      <%= image_tag("pizza.png", :id => "pizza") %>
       <%= render 'shared/foodpost_form' %>
+    <% else %>
+      <%= image_tag("pizza.png", :id => "pizza-no-hover") %>
     <% end %>
     <ol class="foodposts">
       <%= render @foodposts %>
