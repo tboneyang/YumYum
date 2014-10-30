@@ -4,6 +4,7 @@
     Details
     <%= f.text_area :content, placeholder: "Compose new foodpost...",
                     :class => 'content' %>
+    <div class="counter" style="text-align: right;"></div>
     When
     <%= f.text_field :date, :class => 'datepicker' %>
     <%= f.time_field :start_time, :ampm => true, :minute_step => 30 %>

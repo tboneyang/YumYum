@@ -21,10 +21,23 @@ $(document).ready(function(){
   $(".datepicker").datepicker({
     format: "yyyy-mm-dd"
   });
+
   $("#pizza").click(function(e) {
     $("#new-post").slideDown('slow');
 
     e.preventDefault();
   });
+  
+  $('.content').on('keyup', function(e) {
+    var max = 300;
+    var len = $(this).val().length;
+    
+    if (len >= max) {
+      e.preventDefault();
+      $('.counter').text(' you\'ve reached the character limit');
+    } else {
+      var ch = max - len;
+      $('.counter').text(ch + ' character left');
+    }
+  });
 });
-

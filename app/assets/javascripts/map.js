@@ -18,8 +18,8 @@ function initialize() {
   };
 
   var mapOptions2 = {
-    center: { lat: 42.731, lng: -73.692},
-    zoom: 18,
+    center: { lat: 42.729447, lng: -73.678621},
+    zoom: 17,
     disableDefaultUI: true
   };
 
