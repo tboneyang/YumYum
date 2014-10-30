@@ -6,14 +6,13 @@ Rails.application.routes.draw do
    resources :users
    resources :sessions,  only: [:new, :create, :destroy]
    resources :foodposts, only: [:create, :destroy]
-   root 'static_pages#home'
+   root 'foodposts#index'
    match '/signup',  to: 'users#new',            via: 'get'
    match '/signin',  to: 'sessions#new',         via: 'get'
    match '/signout', to: 'sessions#destroy',     via: 'delete'
    match '/contact', to: "static_pages#contact", via: "get"
    match '/about',   to: "static_pages#about",   via: "get"
    match '/campus',  to: "static_pages#campus",  via: "get"
-   match '/feed',    to: "foodposts#index",      via: "get"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

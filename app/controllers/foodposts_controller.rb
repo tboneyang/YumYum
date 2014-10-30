@@ -3,12 +3,14 @@ class FoodpostsController < ApplicationController
 
   def index
     @foodposts = Foodpost.paginate(page: params[:page])
+    if signed_in?
+      @foodpost = current_user.foodposts.build
+    end
   end
 
   def create
     @foodpost = current_user.foodposts.build(foodpost_params)
     if @foodpost.save
-      flash[:success] = "Post created!"
       redirect_to root_url
     else
       @feed_items = []
@@ -17,7 +19,7 @@ class FoodpostsController < ApplicationController
   end
 
   def destroy
-    @foodpost.destroy
+    Foodpost.find(params[:id]).destroy
     redirect_to root_url
   end
 

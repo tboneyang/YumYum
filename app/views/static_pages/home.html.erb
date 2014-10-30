@@ -1,20 +1,16 @@
-<% if signed_in? %>
-  <div class="row">
-    <div class="span6">
-      <%= image_tag("pizza.png", :id => "pizza") %>
+<div class="row">
+  <div class="span6">
+    <%= image_tag("pizza.png", :id => "pizza") %>
+    <% if signed_in? %>
       <%= render 'shared/foodpost_form' %>
-      <%= render 'shared/feed' %>
-    </div>
-    <div class="span6">
-      <span id="map-canvas" style="height: 500px; width: 500px;"></span>
-      <span id="main-map" style="height: 1px;"></span>
-    </div>
+    <% end %>
+    <ol class="foodposts">
+      <%= render 'foodposts/foodpost' %>
+    </ol>
+    <%= will_paginate %>
   </div>
-<% else %>
-  <div class="center hero-unit">
-    <h1>Welcome to YumYum!</h1>
-
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <div class="span6">
+    <span id="map-canvas" style="height: 500px; width: 500px;"></span>
+    <span id="main-map" style="height: 1px;"></span>
   </div>
-
-<% end %>
+</div>
