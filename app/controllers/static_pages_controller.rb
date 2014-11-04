@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
     if signed_in?
       @foodpost   = current_user.foodposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+    else
+      @feed_items = Foodpost.paginate(page: params[:page])
     end
   end
 

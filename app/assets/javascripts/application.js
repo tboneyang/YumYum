@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require turbolinks
@@ -39,5 +40,27 @@ $(document).ready(function(){
       var ch = max - len;
       $('.counter').text(ch + ' character left');
     }
+  });
+
+  $(function() {
+    var locations = [
+      "Union",
+      "DCC",
+      "Troy",
+      "Ricketts",
+      "Sage",
+      "Greene",
+      "Amos Eaton",
+      "Lally",
+      "Walker",
+      "Carnegie",
+      "Pittsburgh",
+      "LOW",
+      "Heffner Alumni House",
+      "Biotech"
+    ];
+    $( ".location").autocomplete({
+      source: locations
+    });
   });
 });

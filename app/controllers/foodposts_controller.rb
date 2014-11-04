@@ -5,6 +5,11 @@ class FoodpostsController < ApplicationController
     @foodposts = Foodpost.paginate(page: params[:page])
     if signed_in?
       @foodpost = current_user.foodposts.build
+      if @foodpost.save
+        redirect_to root_url
+      else
+        render 'foodposts/index'
+      end
     end
   end
 
