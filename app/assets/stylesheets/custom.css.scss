@@ -6,6 +6,7 @@ $navbarLinkColorHover: #eaeaea;
 $navbarLinkColorActive: #eaeaea;
 $btnPrimaryBackground: #B21522;
 
+@import url('http://fonts.googleapis.com/css?family=Oswald');
 @import url("//fonts.googleapis.com/css?family=Roboto:300,400,500");
 @import "bootstrap";
 
@@ -32,7 +33,7 @@ body {
   /*background-repeat: no-repeat;*/
   /*background-attachment: fixed;*/
   /*background-position: center;*/
-  padding-top: 60px;
+  padding-top: 120px;
   height: 100%;
 }
 
@@ -45,6 +46,7 @@ textarea {
 }
 
 .btn-large{
+margin-top:20px;
   font-size: 1.3em;
   letter-spacing: 5px;
   line-height: 15px;
@@ -65,7 +67,6 @@ textarea {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -142px;
 }
 
 .push{
@@ -113,12 +114,10 @@ p {
 
 #logo {
   float: left;
-  margin-left: 40px;
-  font-size: 2.5em;
+  padding:10px;
+  font-size: 2em;
   color: white;
-  text-transform: lowercase;
   letter-spacing: 1px;
-  padding-top: 19px;
   font-weight: 500;
   &:hover {
     color: $grayLighter;
@@ -263,6 +262,8 @@ input {
 /* Feed */
 
 #pizza {
+  border:5px solid #B21522;
+  border-radius:100%;
   cursor: pointer;
   height: 100px;
   width: 100px;
@@ -276,6 +277,8 @@ input {
   height: 100px;
   width: 100px;
   margin-left: 40%;
+  border:5px solid #B21522;
+  border-radius:100%;
 }
 
 /* foodposts */
@@ -308,16 +311,16 @@ input {
 }
 
 #new-post{
+  margin-top:30px;
   display:none;
   input, select{
     width: 25%;
   }
   .datepicker{
-    margin-left: 28px;
   }
   .location{
-    width: 85%;
-    padding-bottom: 5px;
+    width: 100%;
+    padding-bottom: 20px;
   }
 }
 
@@ -345,4 +348,41 @@ aside {
 #map-canvas {
   position: fixed !important;
   margin-top: 50px;
+}
+
+
+header{
+  background:#B21522;
+  font-family:"Oswald";
+}
+
+.navbar-inner{
+  width:940px;
+  margin:auto;
+}
+
+nav{
+  margin-top:20px;
+}
+
+#formheader{
+  padding:2px;
+  font-size:20px;
+}
+
+
+.date{
+  color:#B21522;
+}
+
+.time{
+  color:#B21522;
+}
+
+.foodpost:hover{
+  background: #f9f9f9;
+}
+
+.foodpost{
+  padding:5\20px;
 }

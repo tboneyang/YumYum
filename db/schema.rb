@@ -13,12 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20141022175407) do
 
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "foodposts", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.time     "time"
     t.time     "start_time"
     t.time     "end_time"
     t.string   "location"
