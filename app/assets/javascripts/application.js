@@ -57,7 +57,8 @@ $(document).ready(function(){
       "Pittsburgh",
       "LOW",
       "Heffner Alumni House",
-      "Biotech"
+      "Biotech",
+      "Playhouse"
     ];
     $( ".location").autocomplete({
       source: locations
