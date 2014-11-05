@@ -51,27 +51,31 @@ function initialize() {
   map.setOptions({styles: noPoi});
   map2.setOptions({styles: noPoi});
 
-  var club     = {lat: 42.730581, lng: -73.690524};
-  var club_marker = makeMarker(club, map2, "Club 3rd");
-  var union    = {lat: 42.729950, lng: -73.676609};
-  var DCC      = {lat: 42.729498, lng: -73.678999};
-  var ricketts = {lat: 42.730931, lng: -73.679727};
-  var sage     = {lat: 42.730836, lng: -73.681649};
-  var troy     = {lat: 42.730985, lng: -73.680538};
-  var greene   = {lat: 42.730040, lng: -73.681144};
-  var amos     = {lat: 42.730095, lng: -73.682394};
-  var lally    = {lat: 42.730083, lng: -73.681895};
-  var walker   = {lat: 42.730765, lng: -73.682501};
-  var carnegie = {lat: 42.730465, lng: -73.683129};
-  var pitts    = {lat: 42.731116, lng: -73.683263};
-  var low      = {lat: 42.729283, lng: -73.678762};
-  var alumni   = {lat: 42.732878, lng: -73.678089};
-  var biotech  = {lat: 42.728150, lng: -73.678337};
+  var club      = {lat: 42.730581, lng: -73.690524};
+  var union     = {lat: 42.729950, lng: -73.676609};
+  var DCC       = {lat: 42.729498, lng: -73.678999};
+  var ricketts  = {lat: 42.730931, lng: -73.679727};
+  var sage      = {lat: 42.730836, lng: -73.681649};
+  var troy      = {lat: 42.730985, lng: -73.680538};
+  var greene    = {lat: 42.730040, lng: -73.681144};
+  var amos      = {lat: 42.730095, lng: -73.682394};
+  var lally     = {lat: 42.730083, lng: -73.681895};
+  var walker    = {lat: 42.730765, lng: -73.682501};
+  var carnegie  = {lat: 42.730465, lng: -73.683129};
+  var pitts     = {lat: 42.731116, lng: -73.683263};
+  var low       = {lat: 42.729283, lng: -73.678762};
+  var alumni    = {lat: 42.732878, lng: -73.678089};
+  var biotech   = {lat: 42.728150, lng: -73.678337};
+  var playhouse = {lat: 42.729190, lng: -73.678184};
 
   $('.foodpost').each(function(){
     var loc = $(this).find(".location").text();
 
-    if (loc.indexOf("DCC") > -1){
+    if (loc.indexOf("layhouse") > -1){
+      var playhouse_marker = makeMarker(playhouse, map2, "Playhouse");
+      markers.push(playhouse_marker);
+    }
+    else if (loc.indexOf("DCC") > -1){
       var DCC_marker = makeMarker(DCC, map2, "DCC");
       markers.push(DCC_marker);
     }
@@ -137,6 +141,10 @@ function initialize() {
 
       var loc = $(this).find(".location").text();
 
+      if (loc.indexOf("Playhouse") > -1){
+        toggleBounce(playhouse_marker);
+        map2.panTo(playhouse);
+      }
       if (loc.indexOf("DCC") > -1){
         toggleBounce(DCC_marker);
         map2.panTo(DCC);
