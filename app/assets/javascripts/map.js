@@ -49,7 +49,7 @@ function initialize() {
     }
   ];
   map.setOptions({styles: noPoi});
-  map2.setOptions({styles: noPoi});
+  //map2.setOptions({styles: noPoi});
 
   var club      = {lat: 42.730581, lng: -73.690524};
   var union     = {lat: 42.729950, lng: -73.676609};
