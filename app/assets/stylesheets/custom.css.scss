@@ -355,18 +355,19 @@ aside {
 /* Google Maps */
 #main-map { 
   margin-top: 10px; 
+  transition: all 1s;
 }
 
 #map-canvas {
   position: fixed !important;
   margin-top: 30px;
   margin-left: 60px;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 
 .side-map {
-  transition: all 2s;
+  transition: all 1s;
   position: fixed !important;
   margin-top: 30px;
   margin-left: 60px;
@@ -413,19 +414,24 @@ nav{
 
 /* campus page */
 
-#rest-box {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+#info {
+  transition: all 1s;
+  margin-top: 10px;
+  height: 380px;
 }
+
 #rest-name {
   text-decoration: none;
-  color: black;
+  /*color: black;*/
   margin-bottom: -30px;
   font-size: 30px;
   font-weight: 600;
 }
 
 #rest-box {
-  width: 100%;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 10px 10px 10px 10px;
+  width: 85%;
   height: 100%;
   border: 1px solid #ddd;
   a{

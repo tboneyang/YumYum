@@ -1,4 +1,6 @@
-var info = "\
+var prevMarker = null;
+
+var ruck_info = "\
 <div id='rest-box'>\
   <a href='http://getrucked.com' id='rest-name'>The Ruck</a>\
   <div id='rest-details'>\
@@ -39,6 +41,50 @@ var info = "\
       <p ><span class='bold'>Menu: </span><a href='https://locu.com/places/the-ruck-troy-us-1/#menu'>locu.com</a></p>\
   </div>\
 </div>"
+
+var mud_info = "\
+<div id='rest-box'>\
+  <a href='http://muddaddyflats.com' id='rest-name'>Muddaddy Flats</a>\
+  <div id='rest-details'>\
+    <p><span class='bold'>Phone: </span>(518) 326-0630</p>\
+    <p><span class='bold'>Hours </span></p>\
+    <div id='extra hours'>\
+      <table>\
+        <tr>\
+          <td>Monday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Tuesday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Wednesday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Thursday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Friday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Saturday</td>\
+          <td>11:00 am - 8:00 pm</td>\
+        </tr>\
+        <tr>\
+          <td>Sunday</td>\
+          <td>CLOSED</td>\
+        </tr>\
+      </table>\
+    </div>\
+      <p ><span class='bold'>Menu: </span><a href='http://www.muddaddyflats.com/menu.html'>Muddaddyflats</a></p>\
+  </div>\
+</div>"
+
+
 
 var the_ruck = new google.maps.LatLng(42.7283895,-73.6906465);
 var ruck_window = new google.maps.InfoWindow({
@@ -102,9 +148,10 @@ function initialize() {
 
   var ruckMarker = makeMarker(the_ruck, map, "The Ruck");
   addWindow(ruckMarker, ruck_window);
-  google.maps.event.addListener(ruckMarker, 'click', restInfo);
+  google.maps.event.addListener(ruckMarker, 'click', restInfo(ruckMarker, ruck_info));
   var mudMarker = makeMarker(mud_daddies, map, "Mudaddy Flats"); 
   addWindow(mudMarker, mud_window);
+  google.maps.event.addListener(mudMarker, 'click', restInfo(mudMarker, mud_info));
   var grindMarker = makeMarker(daily_grind, map, "Daily Grind");
   addWindow(grindMarker, daily_window);
   var spillinMarker = makeMarker(spillin, map, "Spill'n the Beans");
@@ -295,14 +342,21 @@ function initialize() {
     });
   }
 
-  function restInfo() {
+  function restInfo(marker, info) {
+    return function() {
       $('.row').children('div:first-child').removeClass('span12');
       $('.row').children('div:first-child').addClass('span6');
+      $('#info').remove();
       $('.span6').before("<div class='span6' id='info'></div>");
       $('#info').append(info);
       $('#main-map').addClass('side-map');
       map.setCenter({lat: 42.728375, lng: -73.685574});
-      toggleBounce(ruckMarker);
+      toggleBounce(marker);
+      if(prevMarker){
+        toggleBounce(prevMarker);
+      }
+      prevMarker = marker;
+    };
   }
 }
 
