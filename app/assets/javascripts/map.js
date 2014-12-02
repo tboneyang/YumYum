@@ -1,8 +1,10 @@
 var prevMarker = null;
+var d = new Date().getHours();
 
 var ruck_info = "\
 <div id='rest-box'>\
   <a href='http://getrucked.com' id='rest-name'>The Ruck</a>\
+  <div id='time'></div>\
   <div id='rest-details'>\
     <p><span class='bold'>Phone: </span>(518) 273-1872</p>\
     <p><span class='bold'>Hours </span></p>\
@@ -45,6 +47,7 @@ var ruck_info = "\
 var mud_info = "\
 <div id='rest-box'>\
   <a href='http://muddaddyflats.com' id='rest-name'>Muddaddy Flats</a>\
+  <div id='time'></div>\
   <div id='rest-details'>\
     <p><span class='bold'>Phone: </span>(518) 326-0630</p>\
     <p><span class='bold'>Hours </span></p>\
@@ -356,6 +359,7 @@ function initialize() {
         toggleBounce(prevMarker);
       }
       prevMarker = marker;
+      $('#time').text(available(d));
     };
   }
 }
@@ -384,3 +388,15 @@ function setAllMarkersNull() {
   for (var i=0; i<markers.length; i++)
     markers[i].setAnimation(null);
 }
+
+function available(d) {
+  if(d>=16 || d<=4){
+    $('#time').addClass('open');
+    return "Open";
+  }
+  else {
+    $('#time').removeClass('.open');
+    return "Closed";
+  }
+}
+
