@@ -1,3 +1,45 @@
+var info = "\
+<div id='rest-box'>\
+  <a href='http://getrucked.com' id='rest-name'>The Ruck</a>\
+  <div id='rest-details'>\
+    <p><span class='bold'>Phone: </span>(518) 273-1872</p>\
+    <p><span class='bold'>Hours </span></p>\
+    <div id='extra hours'>\
+      <table>\
+        <tr>\
+          <td>Monday</td>\
+          <td>4:00 pm - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Tuesday</td>\
+          <td>4:00 pm - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Wednesday</td>\
+          <td>11:00 am - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Thursday</td>\
+          <td>11:00 am - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Friday</td>\
+          <td>11:00 am - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Saturday</td>\
+          <td>11:00 am - 4:00 am</td>\
+        </tr>\
+        <tr>\
+          <td>Sunday</td>\
+          <td>12:00 pm - 4:00 am</td>\
+        </tr>\
+      </table>\
+    </div>\
+      <p ><span class='bold'>Menu: </span><a href='https://locu.com/places/the-ruck-troy-us-1/#menu'>locu.com</a></p>\
+  </div>\
+</div>"
+
 var the_ruck = new google.maps.LatLng(42.7283895,-73.6906465);
 var ruck_window = new google.maps.InfoWindow({
   content: "The Ruck"
@@ -9,13 +51,41 @@ var mud_window = new google.maps.InfoWindow({
 });
 
 var daily_grind = new google.maps.LatLng(42.730648, -73.690287);
+var daily_window = new google.maps.InfoWindow({
+  content: "Daily Grind"
+});
+
+var spillin = new google.maps.LatLng(42.731970, -73.690293);
+var spillin_window = new google.maps.InfoWindow({
+  content: "Spill'n the Beans"
+});
+
+var lucas = new google.maps.LatLng(42.731185, -73.691329);
+var lucas_window = new google.maps.InfoWindow({
+  content: "Lucas Confectionery"
+});
+
+var shalimar = new google.maps.LatLng(42.732241, -73.688464);
+var shalimar_window = new google.maps.InfoWindow({
+  content: "Shalimar"
+});
+
+var broadway = new google.maps.LatLng(42.731079, -73.689462);
+var broadway_window = new google.maps.InfoWindow({
+  content: "Broadway Cafe"
+});
+
+var illium = new google.maps.LatLng(42.731382, -73.691833);
+var illium_window = new google.maps.InfoWindow({
+  content: "Illium Cafe"
+});
 
 var markers = [];
 
 function initialize() {
   var mapOptions = {
     center: { lat: 42.731, lng: -73.692},
-    zoom: 14,
+    zoom: 16,
     disableDefaultUI: true
   };
 
@@ -31,14 +101,22 @@ function initialize() {
       mapOptions2);
 
   var ruckMarker = makeMarker(the_ruck, map, "The Ruck");
-  google.maps.event.addListener(ruckMarker, 'click', function() {
-    ruck_window.open(map, ruckMarker);
-  });
+  addWindow(ruckMarker, ruck_window);
+  google.maps.event.addListener(ruckMarker, 'click', restInfo);
   var mudMarker = makeMarker(mud_daddies, map, "Mudaddy Flats"); 
-  google.maps.event.addListener(mudMarker, 'click', function() {
-    mud_window.open(map, mudMarker);
-  });
+  addWindow(mudMarker, mud_window);
   var grindMarker = makeMarker(daily_grind, map, "Daily Grind");
+  addWindow(grindMarker, daily_window);
+  var spillinMarker = makeMarker(spillin, map, "Spill'n the Beans");
+  addWindow(spillinMarker, spillin_window);
+  var lucasMarker = makeMarker(lucas, map, "Lucas Confectionery");
+  addWindow(lucasMarker, lucas_window);
+  var shalimarMarker = makeMarker(shalimar, map, "Shalimar");
+  addWindow(shalimarMarker, shalimar_window);
+  var broadwayMarker = makeMarker(broadway, map, "Broadway Cafe");
+  addWindow(broadwayMarker, broadway_window);
+  var illiumMarker = makeMarker( illium, map, "Illium Cafe");
+  addWindow(illiumMarker, illium_window);
 
   var noPoi = [
   {
@@ -207,6 +285,25 @@ function initialize() {
       }
     });
   });
+
+  function addWindow (marker, window) {
+    google.maps.event.addListener(marker, 'mouseover', function() {
+      window.open(map, marker);
+      google.maps.event.addListener(marker, 'mouseout', function(){
+        window.close();
+      });
+    });
+  }
+
+  function restInfo() {
+      $('.row').children('div:first-child').removeClass('span12');
+      $('.row').children('div:first-child').addClass('span6');
+      $('.span6').before("<div class='span6' id='info'></div>");
+      $('#info').append(info);
+      $('#main-map').addClass('side-map');
+      map.setCenter({lat: 42.728375, lng: -73.685574});
+      toggleBounce(ruckMarker);
+  }
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -218,6 +315,7 @@ function makeMarker (loc, map, title) {
     title: title
   });
 }
+
 
 function toggleBounce(marker) {
   

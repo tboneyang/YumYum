@@ -361,6 +361,17 @@ aside {
   position: fixed !important;
   margin-top: 30px;
   margin-left: 60px;
+  transition: all 2s;
+}
+
+
+.side-map {
+  transition: all 2s;
+  position: fixed !important;
+  margin-top: 30px;
+  margin-left: 60px;
+  height: 400px !important;
+  width: 400px;
 }
 
 
@@ -398,4 +409,30 @@ nav{
 
 .foodpost{
   padding:5\20px;
+}
+
+/* campus page */
+
+#rest-box {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#rest-name {
+  text-decoration: none;
+  color: black;
+  margin-bottom: -30px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#rest-box {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  a{
+    text-decoration: none;
+  }
+}
+
+.bold {
+  font-weight: bold;
 }
